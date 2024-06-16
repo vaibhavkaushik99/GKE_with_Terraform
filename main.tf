@@ -9,15 +9,15 @@ terraform {
 
 provider "google" {
   credentials = file(var.credentials_file)
-  project     = "winter-alliance-426614-v2"
-  region      = "asia-south2"
-  zone        = "asia-south2-a"
+  project     = "<YOUR_PROJECT_ID>"
+  region      = "<YOUR_DESIRED_REGION>"
+  zone        = "<YOUR_DESIRED_ZONE>"
 }
 
-# GKE Cluster Configurations
+# GKE Cluster Configurations - Zonal Cluster
 resource "google_container_cluster" "gke_cluster" {
   name                     = var.cluster_name
-  location                 = "asia-south2-a"
+  location                 = "<YOUR_DESIRED_ZONE>"
   remove_default_node_pool = true
   initial_node_count       = 1
   ip_allocation_policy {
@@ -25,7 +25,7 @@ resource "google_container_cluster" "gke_cluster" {
   }
   private_cluster_config {
     enable_private_nodes   = true
-    master_ipv4_cidr_block = "172.30.0.0/28"
+    master_ipv4_cidr_block = "<YOUR_IPV4_CIDR_BLOCK>"
   }
 }
 

@@ -1,8 +1,8 @@
 # Specify path of service account private-key json file
-credentials_file = "~/Downloads/winter-alliance-426614-v2-37d67d432eab.json"
+credentials_file = "<PATH_OF_YOUR_SA_KEY_FILE>"
 
 # GKE Cluster Name
-cluster_name = "vaibhav-hashnode-demo-cluster"
+cluster_name = "YOUR_DESIRED_CLUSTER_NAME"
 
 # Number of Nodes
 node_count = "1"
